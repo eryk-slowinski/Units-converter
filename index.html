@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Metric-Imperial converter</title>
+    <script src="https://kit.fontawesome.com/95ed1b881a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,30 +15,111 @@
     <div class="wrap">
         <header>Metric and Imperial conversion</header>
         <div class="main">
-            <div class="length">
-                <p>Length conversion</p>
-
+            <div class="converters">
+                <div class="length">
+                    <button>Length conversion <i class="fas fa-sort-down"></i></button>
+                    <div class="inputs">
+                        <label for="From">From</label>
+                        <select name="Length" id="From">
+                            <option value="mm">Milimetres [mm]</option>
+                            <option value="cm">Centimetres [cm]</option>
+                            <option value="m">Metres [m]</option>
+                            <option value="km">Kilometres [km]</option>
+                            <option value="inch">Inches [in]</option>
+                            <option value="ft">Feets [ft]</option>
+                            <option value="yd">Yards [yd]</option>
+                            <option value="ml">Miles [ml]</option>
+                        </select>
+                        <label for="Value">Value</label>
+                        <input type="number" id="value">
+                        <label for="To">To</label>
+                        <select name="Length" id="To">
+                            <option value="mm">Milimetres [mm]</option>
+                            <option value="cm">Centimetres [cm]</option>
+                            <option value="m">Metres [m]</option>
+                            <option value="km">Kilometres [km]</option>
+                            <option value="inch">Inches [in]</option>
+                            <option value="ft">Feets [ft]</option>
+                            <option value="yd">Yards [yd]</option>
+                            <option value="ml">Miles [ml]</option>
+                        </select>
+                        <div class="result"></div>
+                    </div>
+                </div>
+                <div class="area">
+                    <button>Area conversion <i class="fas fa-sort-down"></i></button>
+                    <div class="inputs">
+                        <label for="From">From</label>
+                        <select name="Area" id="From"></select>
+                        <label for="Value">Value</label>
+                        <input type="number" id="value">
+                        <label for="To">To</label>
+                        <select name="Area" id="To"></select>
+                        <div class="result"></div>
+                    </div>
+                </div>
+                <div class="volume">
+                    <button>Volume conversion <i class="fas fa-sort-down"></i></button>
+                    <div class="inputs">
+                        <label for="From">From</label>
+                        <select name="Volume" id="From"></select>
+                        <label for="Value">Value</label>
+                        <input type="number" id="value">
+                        <label for="To">To</label>
+                        <select name="Volume" id="To"></select>
+                        <div class="result"></div>
+                    </div>
+                </div>
+                <div class="mass">
+                    <button>Mass conversion <i class="fas fa-sort-down"></i></button>
+                    <div class="inputs">
+                        <label for="From">From</label>
+                        <select name="Mass" id="From"></select>
+                        <label for="Value">Value</label>
+                        <input type="number" id="value">
+                        <label for="To">To</label>
+                        <select name="Mass" id="To"></select>
+                        <div class="result"></div>
+                    </div>
+                </div>
+                <div class="temperature">
+                    <button>Temperature conversion <i class="fas fa-sort-down"></i></button>
+                    <div class="inputs">
+                        <label for="From">From</label>
+                        <select name="Temperature" id="From"></select>
+                        <label for="Value">Value</label>
+                        <input type="number" id="value">
+                        <label for="To">To</label>
+                        <select name="Temperature" id="To"></select>
+                        <div class="result"></div>
+                    </div>
+                </div>
             </div>
-            <div class="area">
-                <p>Area conversion</p>
-
+            <div class="side">
+                <aside class="facts">Fun facts</aside>
             </div>
-            <div class="volume">
-                <p>Volume conversion</p>
-
-            </div>
-            <div class="mass">
-                <p>Mass conversion</p>
-
-            </div>
-            <div class="temperature">
-                <p>Temperature conversion</p>
-
-            </div>
-            <aside class="facts"></aside>
         </div>
         <footer class="footer">&copy 2020 Eryk Słowiński</footer>
     </div>
+
+    <script>
+        const buttons = document.querySelectorAll('button');
+
+        function buttonHandler() {
+            this.nextElementSibling.classList.toggle('active');
+        }
+
+        buttons.forEach(button => button.addEventListener('click', buttonHandler));
+
+        const valueLength = document.querySelector('input')
+
+        valueLength.addEventListener('input', function () {
+            const selectFrom = document.querySelector('.length #from');
+            console.log(selectFrom.value);
+            // console.log(valueLength.value);
+
+        })
+    </script>
 </body>
 
 </html>
