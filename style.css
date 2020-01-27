@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    padding: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(212, 209, 209);
+    text-align: center;
+    background-color: #333333;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: #948f8f;
+}
