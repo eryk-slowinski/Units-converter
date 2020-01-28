@@ -25,7 +25,7 @@
                             <option value="cm">Centimetres [cm]</option>
                             <option value="m">Metres [m]</option>
                             <option value="km">Kilometres [km]</option>
-                            <option value="inch">Inches [in]</option>
+                            <option value="in">Inches [in]</option>
                             <option value="ft">Feets [ft]</option>
                             <option value="yd">Yards [yd]</option>
                             <option value="ml">Miles [ml]</option>
@@ -38,12 +38,12 @@
                             <option value="cm">Centimetres [cm]</option>
                             <option value="m">Metres [m]</option>
                             <option value="km">Kilometres [km]</option>
-                            <option value="inch">Inches [in]</option>
+                            <option value="in">Inches [in]</option>
                             <option value="ft">Feets [ft]</option>
                             <option value="yd">Yards [yd]</option>
                             <option value="ml">Miles [ml]</option>
                         </select>
-                        <div class="result"></div>
+                        <div class="result-length"></div>
                     </div>
                 </div>
                 <div class="area">
@@ -101,25 +101,7 @@
         </div>
         <footer class="footer">&copy 2020 Eryk Słowiński</footer>
     </div>
-
-    <script>
-        const buttons = document.querySelectorAll('button');
-
-        function buttonHandler() {
-            this.nextElementSibling.classList.toggle('active');
-        }
-
-        buttons.forEach(button => button.addEventListener('click', buttonHandler));
-
-        const valueLength = document.querySelector('input')
-
-        valueLength.addEventListener('input', function () {
-            const selectFrom = document.querySelector('.length #from');
-            console.log(selectFrom.value);
-            // console.log(valueLength.value);
-
-        })
-    </script>
+    <script src="jsfiles/main.js" type="module"></script>
 </body>
 
 </html>
