@@ -1,6 +1,7 @@
 import {
     length,
     area,
+    volume,
 } from './lib.js';
 
 const buttons = document.querySelectorAll('button');
@@ -19,7 +20,7 @@ lengthValue.addEventListener('input', function () {
     const selectTo = document.querySelector('.length #To');
     const resultField = document.querySelector('.result-length');
     const result = lengthValue.value * length[selectFrom.value][selectTo.value];
-    resultField.textContent = `${lengthValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`
+    resultField.textContent = `${lengthValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
 })
 
 const areaValue = document.querySelector('.area input');
@@ -29,5 +30,15 @@ areaValue.addEventListener('input', function () {
     const selectTo = document.querySelector('.area #To');
     const resultField = document.querySelector('.result-area');
     const result = areaValue.value * area[selectFrom.value][selectTo.value];
-    resultField.textContent = `${areaValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`
+    resultField.textContent = `${areaValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+})
+
+const volumeValue = document.querySelector('.volume input');
+
+volumeValue.addEventListener('input', function () {
+    const selectFrom = document.querySelector('.volume #From');
+    const selectTo = document.querySelector('.volume #To');
+    const resultField = document.querySelector('.result-volume');
+    const result = volumeValue.value * volume[selectFrom.value][selectTo.value];
+    resultField.textContent = `${volumeValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
 })
