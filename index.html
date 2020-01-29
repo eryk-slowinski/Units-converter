@@ -152,16 +152,24 @@
                         <div class="result-mass"></div>
                     </div>
                 </div>
-                <div class="temperature">
+                <div class="temp">
                     <button>Temperature conversion <i class="fas fa-sort-down"></i></button>
                     <div class="inputs">
                         <label for="From">From</label>
-                        <select name="Temperature" id="From"></select>
+                        <select name="Temperature" id="From">
+                            <option value="C">Celsius</option>
+                            <option value="F">Fahrenheit</option>
+                            <option value="K">Kelvin</option>
+                        </select>
                         <label for="Value">Value</label>
                         <input type="number" id="value">
                         <label for="To">To</label>
-                        <select name="Temperature" id="To"></select>
-                        <div class="result"></div>
+                        <select name="Temperature" id="To">
+                            <option value="C">Celsius</option>
+                            <option value="F">Fahrenheit</option>
+                            <option value="K">Kelvin</option>
+                        </select>
+                        <div class="result-temp"></div>
                     </div>
                 </div>
             </div>

@@ -53,3 +53,16 @@ massValue.addEventListener('input', function () {
     const result = massValue.value * mass[selectFrom.value][selectTo.value];
     resultField.textContent = `${massValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
 })
+
+const tempValue = document.querySelector('.temp input');
+
+tempValue.addEventListener('input', function () {
+    const selectFrom = document.querySelector('.temp #From');
+    const selectTo = document.querySelector('.temp #To');
+    const resultField = document.querySelector('.result-temp');
+    let result;
+    if (selectFrom.value === 'C' && selectTo.value === 'F') result = (tempValue.value * 9 / 5) + 32;
+    else if (selectFrom.value === 'F' && selectTo.value === 'C') result = (tempValue.value - 32) * 5 / 9;
+    else if (selectFrom.value === selectTo.value) result = tempValue.value;
+    resultField.textContent = `${tempValue.value} ${selectFrom.value} is ${result} ${selectTo.value}`;
+})
