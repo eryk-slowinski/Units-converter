@@ -1,3 +1,10 @@
+export const buttons = document.querySelectorAll('button');
+export const lengthValue = document.querySelector('.length input');
+export const areaValue = document.querySelector('.area input');
+export const volumeValue = document.querySelector('.volume input');
+export const massValue = document.querySelector('.mass input');
+export const tempValue = document.querySelector('.temp input');
+
 export const length = {
     mm: {
         mm: 1,
