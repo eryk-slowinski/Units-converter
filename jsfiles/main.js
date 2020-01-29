@@ -2,6 +2,7 @@ import {
     length,
     area,
     volume,
+    mass,
 } from './lib.js';
 
 const buttons = document.querySelectorAll('button');
@@ -41,4 +42,14 @@ volumeValue.addEventListener('input', function () {
     const resultField = document.querySelector('.result-volume');
     const result = volumeValue.value * volume[selectFrom.value][selectTo.value];
     resultField.textContent = `${volumeValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+})
+
+const massValue = document.querySelector('.mass input');
+
+massValue.addEventListener('input', function () {
+    const selectFrom = document.querySelector('.mass #From');
+    const selectTo = document.querySelector('.mass #To');
+    const resultField = document.querySelector('.result-mass');
+    const result = massValue.value * mass[selectFrom.value][selectTo.value];
+    resultField.textContent = `${massValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
 })
