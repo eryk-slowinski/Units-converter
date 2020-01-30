@@ -16,11 +16,12 @@ import {
     tempCalc,
     generateFact,
     calculate,
+    changingArrows,
 } from './utils.js';
-
 
 generateFact();
 buttons.forEach(button => button.addEventListener('click', buttonHandler));
+buttons.forEach(button => button.addEventListener('click', changingArrows));
 lengthValue.addEventListener('input', lengthCalc);
 areaValue.addEventListener('input', areaCalc);
 volumeValue.addEventListener('input', volumeCalc);

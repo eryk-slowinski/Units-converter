@@ -16,7 +16,20 @@ import {
 } from './calcratios.js';
 
 export function buttonHandler() {
+    this.classList.toggle('pressed');
     this.nextElementSibling.classList.toggle('active');
+}
+
+export function changingArrows() {
+    const arrowUp = `<span>&#9652</span>`;
+    const arrowDown = `<span>&#9662</span>`;
+    if (this.className) {
+        this.firstElementChild.remove();
+        this.insertAdjacentHTML('beforeend', arrowUp);
+    } else {
+        this.firstElementChild.remove();
+        this.insertAdjacentHTML('beforeend', arrowDown);
+    }
 }
 
 export function lengthCalc() {
