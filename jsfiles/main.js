@@ -13,9 +13,12 @@ import {
     volumeCalc,
     massCalc,
     tempCalc,
+    generateFact,
 } from './utils.js';
 
 
+
+generateFact();
 buttons.forEach(button => button.addEventListener('click', buttonHandler));
 lengthValue.addEventListener('input', lengthCalc);
 areaValue.addEventListener('input', areaCalc);

@@ -8,6 +8,8 @@ import {
     area,
     volume,
     mass,
+    funFact,
+    funFacts,
 } from './lib.js';
 
 export function buttonHandler() {
@@ -57,4 +59,17 @@ export function tempCalc() {
     else if (selectFrom.value === 'F' && selectTo.value === 'K') result = (tempValue.value - 32) * (5 / 9) + 273.15;
     else if (selectFrom.value === selectTo.value) result = tempValue.value;
     resultField.textContent = `${tempValue.value} ${selectFrom.value} is ${result} ${selectTo.value}`;
+}
+
+export function generateFact() {
+    function renderFact() {
+        let randomFact = funFacts[Math.floor(Math.random() * 10)];
+        if (randomFact === funFact.textContent) {
+            randomFact = funFacts[Math.floor(Math.random() * 10)];
+        } else {
+            funFact.textContent = randomFact;
+        }
+    }
+    renderFact();
+    setInterval(renderFact, 15000);
 }

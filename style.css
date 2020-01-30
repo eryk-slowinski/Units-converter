@@ -14,6 +14,10 @@ header {
     background-color: #333333;
 }
 
+.wrap {
+    min-height: calc(100vh - 30px);
+}
+
 .main {
     display: flex;
     min-height: 80vh;
@@ -23,7 +27,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 3;
+    margin-top: 60px;
+    flex: 2;
 }
 
 .converters>div {
@@ -73,7 +78,6 @@ input {
 }
 
 .inputs div:last-child {
-    /* padding: 10px; */
     margin-top: 15px;
     font-size: 35px;
     text-align: center;
@@ -83,12 +87,24 @@ input {
 
 .side {
     flex: 1;
-    border: 1px solid black;
+}
+
+.side h3 {
+    margin: 70px 0 50px 0;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 45px;
+}
+
+.side p {
+    margin: 0 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
 }
 
 footer {
+    height: 20px;
     text-align: center;
     padding: 5px;
     background-color: #948f8f;
-    margin-top: 30px;
 }
