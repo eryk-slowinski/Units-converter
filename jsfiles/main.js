@@ -5,6 +5,7 @@ import {
     volumeValue,
     massValue,
     tempValue,
+    allSelects,
 } from './lib.js';
 import {
     buttonHandler,
@@ -14,8 +15,8 @@ import {
     massCalc,
     tempCalc,
     generateFact,
+    calculate,
 } from './utils.js';
-
 
 
 generateFact();
@@ -25,3 +26,4 @@ areaValue.addEventListener('input', areaCalc);
 volumeValue.addEventListener('input', volumeCalc);
 massValue.addEventListener('input', massCalc);
 tempValue.addEventListener('input', tempCalc);
+allSelects.forEach(select => select.addEventListener('change', calculate));

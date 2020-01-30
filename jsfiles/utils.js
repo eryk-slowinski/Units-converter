@@ -4,13 +4,16 @@ import {
     volumeValue,
     massValue,
     tempValue,
+    funFact,
+    funFacts,
+} from './lib.js';
+
+import {
     length,
     area,
     volume,
     mass,
-    funFact,
-    funFacts,
-} from './lib.js';
+} from './calcratios.js';
 
 export function buttonHandler() {
     this.nextElementSibling.classList.toggle('active');
@@ -22,6 +25,7 @@ export function lengthCalc() {
     const resultField = document.querySelector('.result-length');
     const result = lengthValue.value * length[selectFrom.value][selectTo.value];
     resultField.textContent = `${lengthValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+    if (!lengthValue.value) resultField.textContent = '';
 }
 
 export function areaCalc() {
@@ -30,6 +34,7 @@ export function areaCalc() {
     const resultField = document.querySelector('.result-area');
     const result = areaValue.value * area[selectFrom.value][selectTo.value];
     resultField.textContent = `${areaValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+    if (!areaValue.value) resultField.textContent = '';
 }
 
 export function volumeCalc() {
@@ -38,6 +43,7 @@ export function volumeCalc() {
     const resultField = document.querySelector('.result-volume');
     const result = volumeValue.value * volume[selectFrom.value][selectTo.value];
     resultField.textContent = `${volumeValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+    if (!volumeValue.value) resultField.textContent = '';
 }
 
 export function massCalc() {
@@ -46,6 +52,7 @@ export function massCalc() {
     const resultField = document.querySelector('.result-mass');
     const result = massValue.value * mass[selectFrom.value][selectTo.value];
     resultField.textContent = `${massValue.value} ${selectFrom.value} is: ${result} ${selectTo.value}`;
+    if (!massValue.value) resultField.textContent = '';
 }
 
 export function tempCalc() {
@@ -57,8 +64,11 @@ export function tempCalc() {
     else if (selectFrom.value === 'C' && selectTo.value === 'K') result = parseFloat(tempValue.value) + 273.15;
     else if (selectFrom.value === 'F' && selectTo.value === 'C') result = (tempValue.value - 32) * 5 / 9;
     else if (selectFrom.value === 'F' && selectTo.value === 'K') result = (tempValue.value - 32) * (5 / 9) + 273.15;
+    else if (selectFrom.value === 'K' && selectTo.value === 'C') result = tempValue.value - 273.15;
+    else if (selectFrom.value === 'K' && selectTo.value === 'F') result = (tempValue.value - 273.15) * 9 / 5 + 32;
     else if (selectFrom.value === selectTo.value) result = tempValue.value;
     resultField.textContent = `${tempValue.value} ${selectFrom.value} is ${result} ${selectTo.value}`;
+    if (!tempValue.value) resultField.textContent = '';
 }
 
 export function generateFact() {
@@ -72,4 +82,12 @@ export function generateFact() {
     }
     renderFact();
     setInterval(renderFact, 15000);
+}
+
+export function calculate() {
+    lengthCalc();
+    areaCalc();
+    volumeCalc();
+    massCalc();
+    tempCalc();
 }
