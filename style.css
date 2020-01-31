@@ -112,3 +112,59 @@ footer {
     padding: 5px;
     background-color: #948f8f;
 }
+
+@media (max-width: 980px) {
+    .inputs {
+        margin-top: -5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .active {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    select,
+    input {
+        margin: 0 0 30px 0;
+        width: 250px;
+    }
+}
+
+@media (max-width: 640px) {
+    .active {
+        min-height: 300px;
+    }
+
+    .side h3 {
+        margin: 70px 0 50px 0;
+        font-size: 35px;
+    }
+
+    .side p {
+        font-size: 15px;
+    }
+
+    .inputs div:last-child {
+        font-size: 20px;
+    }
+
+    .converters {
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+    .main {
+        flex-direction: column;
+    }
+
+    .side h3 {
+        margin: 10px 0 20px 0;
+    }
+
+    .side p {
+        margin-bottom: 20px;
+    }
+}
